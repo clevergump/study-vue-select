@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/lodash-4.17.11.js"></script>
+    <script src="lib/vue-v2.6.11.js"></script>
+    <script src="../dists/vue-select-3.11.2.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!--<link href="lib/bootstrap.min.css" type="text/css" rel="stylesheet"/>-->
+    <link href="../dists/vue-select-3.11.2.css" type="text/css" rel="stylesheet"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+    <style>
+        #value {
+            margin-top: 100px
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="container-fluid">
+        <h2>VueSelect Example</h2>
+        <v-select :placeholder="placeholder"
+                  multiple
+                  :options="options" label="name" :value.sync="students"></v-select>
+        <div id="value">{{students}}</div>
+    </div>
+    <script>
+        Vue.component('v-select', VueSelect.VueSelect);
+
+        new Vue({
+            el: '#app',
+            data: function() {
+                return {
+                    options: [
+                        {"student_id": 1, "name": "Vence"},
+                        {"student_id": 2, "name": "Job"},
+                        {"student_id": 3, "name": "Jack"},
+                    ],
+                    placeholder: 'Choose a student..',
+                    students: []
+                }
+            },
+        });
+    </script>
+</body>
+</html>
+
+
+
+<!-- 以下代码只会在使用 vue-select 2.x 时才有效 -->
+
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <script src="lib/vue-v2.6.11.js"></script>
+    <script src="https://unpkg.com/vue-select@2.0.0/dist/vue-select.js"></script>
+&lt;!&ndash;    <script src="../dists/vue-select-3.11.2.js"></script>
+    <link href="../dists/vue-select-3.11.2.css" type="text/css" rel="stylesheet"/>&ndash;&gt;
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+</head>
+<body>
+    <div id="app" class="container-fluid">
+        <h2>VueSelect Example</h2>
+        <v-select :placeholder="placeholder"
+                  multiple
+                  :options="options" label="name" :value.sync="students"></v-select>
+        <div id="value">{{students}}</div>
+    </div>
+    <script>
+        Vue.component('v-select', VueSelect.VueSelect);
+
+        new Vue({
+            el: '#app',
+            data: function() {
+                return {
+                    options: [
+                        {"student_id": 1, "name": "Vence"},
+                        {"student_id": 2, "name": "Job"},
+                        {"student_id": 3, "name": "Jack"},
+                    ],
+                    placeholder: 'Choose a student..',
+                    students: []
+                }
+            },
+        });
+    </script>
+</body>
+</html>-->
